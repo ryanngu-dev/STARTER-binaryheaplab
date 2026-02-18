@@ -19,17 +19,17 @@ Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
       int right = 2 * current + 2;
       int smallest = current;
 
-      if (left < n && start[left] < start[smallest]){
+      if (left < n && vdata[left] < vdata[smallest]){
         smallest = left;
       }
 
-      if (right < n && start[right] < start[smallest]){
+      if (right < n && vdata[right] < vdata[smallest]){
         smallest = right;
       }
 
       if (smallest == current) break;
 
-      std::swap(start[current], start[smallest] );
+      std::swap(vdata[current], vdata[smallest] );
 
       current = smallest;
     }
